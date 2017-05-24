@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,6 +33,7 @@ import java.util.ArrayList;
 public class ChatFragment extends Fragment implements ChatInterfaces.View, TextView.OnEditorActionListener {
     private RecyclerView mRecyclerViewChat;
     private EditText mETxtMessage;
+    private Button sendButton;
 
     private ProgressDialog mProgressDialog;
 
@@ -74,6 +76,9 @@ public class ChatFragment extends Fragment implements ChatInterfaces.View, TextV
     private void bindViews(View view) {
         mRecyclerViewChat = (RecyclerView) view.findViewById(R.id.recycler_view_chat);
         mETxtMessage = (EditText) view.findViewById(R.id.edit_text_message);
+        mETxtMessage.setBackgroundResource(R.drawable.tab_indicator);
+        sendButton=(Button)view.findViewById(R.id.sendbutton);
+        sendButton.setBackgroundResource(R.drawable.tab_indicator);
     }
 
     @Override
@@ -93,6 +98,13 @@ public class ChatFragment extends Fragment implements ChatInterfaces.View, TextV
         mChatPresenter = new ChatAccess(this);
         mChatPresenter.getMessage(FirebaseAuth.getInstance().getCurrentUser().getUid(),
                 getArguments().getString(Constants.ARG_RECEIVER_UID));
+
+        sendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendMessage();
+            }
+        });
     }
 
     @Override
@@ -101,7 +113,9 @@ public class ChatFragment extends Fragment implements ChatInterfaces.View, TextV
             sendMessage();
             return true;
         }
+
         return false;
+
     }
 
     private void sendMessage() {

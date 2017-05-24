@@ -10,13 +10,7 @@ import android.support.v7.app.AlertDialog;
 
 import com.pro.sachin.firebasedesign.friendzone.R;
 
-/**
- * Utility class for network related queries.
- * <br>
- * Author Kartik Sharma
- * Created on: 8/7/2016 , 9:15 AM
- * Project: FinalProject
- */
+
 
 public class NetworkConnectionUtil {
     public static final String ERR_DIALOG_TITLE = "No internet connection detected !";

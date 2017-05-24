@@ -16,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+
         android:layout_margin="@dimen/margin_small"
         android:background="@drawable/rounded_rect_bg"
         android:hint="@string/type_a_message"
@@ -23,5 +24,18 @@
         android:inputType="text"
         android:maxLines="1"
         android:padding="@dimen/padding_small" />
+
+    <Button
+        android:id="@+id/sendbutton"
+        android:layout_alignParentBottom="true"
+        android:layout_width="60dp"
+        android:width="40dp"
+        android:height="30dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_alignParentRight="true"
+        android:layout_height="wrap_content"
+
+        android:text="SEND" />
 
 </RelativeLayout>

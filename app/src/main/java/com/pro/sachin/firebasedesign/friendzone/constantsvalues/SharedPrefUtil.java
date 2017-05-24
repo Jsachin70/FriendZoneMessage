@@ -3,11 +3,7 @@ package com.pro.sachin.firebasedesign.friendzone.constantsvalues;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-/**
- * Simple util class for easing the use of shared preference.
- * <p>
- * Created by Kartik_ch on 2/13/2016.
- */
+
 public class SharedPrefUtil {
     /**
      * Name of the preference file
